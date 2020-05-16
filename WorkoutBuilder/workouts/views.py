@@ -1,8 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def index(request):
-    return HttpResponse("Hello, world. This is the workouts app index.")
-
-
-
+def home_view(request):
+    return render(request, "home.html", {})
