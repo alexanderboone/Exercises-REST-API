@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 mechanics_choices = [
     ('Comp', 'Compound'),
@@ -32,6 +33,10 @@ class Exercise(models.Model):
         default='NA'
     )
     description = models.TextField(default='')
+
+    def get_absolute_url(self):
+        '''Return the url of the exercise detail view page'''
+        return reverse("workouts:exercise-detail-view", kwargs={"exercise_name": self.name.replace(' ', '-').lower()})
 
     def __str__(self):
         return self.name
