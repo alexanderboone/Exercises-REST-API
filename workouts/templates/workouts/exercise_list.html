@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<h1>Exercises</h1>
+<p>
+    A compliation of all the exercises you'll ever need.
+</p> 
 {% for instance in object_list %}
 
-    <h2>{{ instance.name }}</h2>
+    <a href='{{ instance.get_absolute_url }}'><h2>{{ instance.name }}</h2></a>
     <p>{{ instance.description }}</p>
 
 {% endfor %}
-
 
 {% endblock %}
