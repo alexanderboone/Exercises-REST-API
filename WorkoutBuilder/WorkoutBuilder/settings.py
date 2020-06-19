@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'workouts.apps.WorkoutsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
