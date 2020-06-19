@@ -21,13 +21,13 @@ class MuscleGroup(models.Model):
 
 class Exercise(models.Model):
     name = models.CharField(max_length=64)
-    muscle_group = models.ManyToManyField('MuscleGroup', related_name='exercises')
+    musclegroups = models.ManyToManyField(MuscleGroup, related_name='exercises')
     mechanics = models.CharField(
         max_length=4,
         choices=mechanics_choices,
         default='NA'
     )
-    ppl = models.CharField(
+    push_pull_legs = models.CharField(
         max_length=4,
         choices=ppl_choices,
         default='NA'
