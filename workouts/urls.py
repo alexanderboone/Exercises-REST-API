@@ -1,6 +1,5 @@
 from django.urls import path, include
 from rest_framework import routers
-
 from . import views
 
 # Router uses for API
@@ -9,7 +8,7 @@ router.register(r'exercises', views.ExerciseViewSet)
 router.register(r'musclegroups', views.MuscleGroupViewSet)
 
 # Used in reversing urls, e.g. 'app_name:route' as first reverse() arg.
-app_name='workouts'
+#app_name='workouts'
 
 urlpatterns = [
     path('', views.home_view, name='home_view'),
