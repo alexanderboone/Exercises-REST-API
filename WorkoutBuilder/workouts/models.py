@@ -21,7 +21,7 @@ class MuscleGroup(models.Model):
 
 class Exercise(models.Model):
     name = models.CharField(max_length=64)
-    musclegroups = models.ManyToManyField(MuscleGroup, related_name='exercises')
+    musclegroups = models.ManyToManyField(MuscleGroup)
     mechanics = models.CharField(
         max_length=4,
         choices=mechanics_choices,
@@ -36,7 +36,7 @@ class Exercise(models.Model):
 
     def get_absolute_url(self):
         '''Return the url of the exercise detail view page'''
-        return reverse("workouts:exercise-detail-view", kwargs={"exercise_name": self.name.replace(' ', '-').lower()})
+        return reverse("exercise-detail-view", kwargs={"exercise_name": self.name.replace(' ', '-').lower()})
 
     def __str__(self):
         return self.name
