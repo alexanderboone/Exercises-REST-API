@@ -19,6 +19,4 @@ urlpatterns = [
     path('exercises/', views.exercise_list_view, name='exercise-list-view'),
     path('exercises/create/', views.exercise_create_view, name='exercise-create-view'),
     path('exercises/<str:exercise_name>/', views.exercise_detail_view, name='exercise-detail-view'),
-
-    path('workouts/', views.workout_list_view, name='workout-list-view'),
 ]

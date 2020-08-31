@@ -33,9 +33,6 @@ def exercise_create_view(request):
     }
     return render(request, "workouts/exercise_create.html", context)
 
-def workout_list_view(request):
-    return render(request, "workouts/workout_list.html", {})
-
 # API Viewsets
 
 class ExerciseViewSet(viewsets.ModelViewSet):
